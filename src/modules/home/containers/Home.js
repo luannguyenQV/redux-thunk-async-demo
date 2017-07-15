@@ -1,20 +1,21 @@
 import { connect } from 'react-redux'
+import Home from '../components/Home'
 import {
   requestPosts,
   receivePosts,
   selectReddit,
   invalidateReddit
-} from './actions'
-import Home from '../components/Home'
+} from '../actions'
 
 const mapDispatchToProps = dispatch => ({
   fetchPosts: (reddit) => {
     dispatch(requestPosts(reddit))
-    return fetch(``)
-      .then
+    return fetch(`https://www.reddit.com/r/${reddit}.json`)
+      .then(response => response.json())
+      .then(json => dispatch(receivePosts(json.data.children)))
   },
   onSelectReddit: (reddit) => {
-
+    dispatch(selectReddit(reddit))
   }
 })
 

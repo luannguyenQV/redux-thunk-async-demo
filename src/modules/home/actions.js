@@ -12,5 +12,3 @@ export const receivePosts = createAction(RECEIVE_POSTS)
 export const selectReddit = createAction(SELECT_REDDIT)
 
 export const invalidateReddit = createAction(INVALIDATE_REDDIT)
-
-

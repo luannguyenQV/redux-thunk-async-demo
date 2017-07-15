@@ -5,7 +5,6 @@ import thunk from 'redux-thunk'
 import { createLogger } from 'redux-logger'
 import Home from './modules/home/containers/Home'
 import homeReducer from './modules/home/reducers'
-import './App.css'
 
 const middleware = [ thunk ]
 if (process.env.NODE_ENV !== 'production') {

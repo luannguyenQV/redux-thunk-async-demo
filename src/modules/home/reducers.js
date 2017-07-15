@@ -19,10 +19,9 @@ const handlers = {
     didInvalidate: false 
   }}),
   [receivePosts]: (state, action) => ({...state, ...{
-    posts: action.posts,
+    posts: action.payload,
     isFetching: false,
-    didInvalidate: false,
-    lastUpdated: action.receivedAt
+    didInvalidate: false
   }}),
   [selectReddit]: (state, action) => ({...state, ...{ selectedReddit: action.payload }}),
   [invalidateReddit]: (state, action) => ({...state, ...{ didInvalidate: true }}),
